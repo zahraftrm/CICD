@@ -10,6 +10,4 @@ COPY . .
 
 RUN go build -o /dist
 
-EXPOSE 80
-
 CMD ["/dist"]
