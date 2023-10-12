@@ -1,14 +1,15 @@
 FROM golang:1.21.0-alpine
 
-WORKDIR /yahuy
+WORKDIR /app
 
-COPY go.mod .
-COPY go.sum .
+COPY go.mod ./
+COPY go.sum ./
 RUN go mod download
 
 COPY . .
 
-# Ensure that the CGO_ENABLED=0 to build a static binary
-RUN CGO_ENABLED=0 go build -o /iniAPP
+RUN go build -o /dist
 
-CMD ["/iniAPP"]
+EXPOSE 8000
+
+CMD ["/dist"]
