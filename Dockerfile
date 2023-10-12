@@ -8,6 +8,6 @@ RUN go mod download
 
 COPY . .
 
-RUN go build -o /dist
+RUN go build -o /iniAPP
 
-CMD ["/dist"]
+CMD ["/iniAPP"]
