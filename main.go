@@ -10,5 +10,5 @@ func main() {
   e := routes.New()
 
   // start the server, and log if it fails
-  e.Logger.Fatal(e.Start(fmt.Sprintf(":%d", cfg.SERVERPORT)))
+  e.Logger.Fatal(e.Start(":8000"))
 }
